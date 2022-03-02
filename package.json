@@ -20,6 +20,12 @@
         "resolve-url-loader": "^2.3.1",
         "sass": "^1.15.2",
         "sass-loader": "^7.1.0",
-        "vue": "^2.5.17"
+        "vue": "^2.5.17",
+        "vue-router": "^3.5.1",
+        "vue-template-compiler": "^2.6.14"
+    },
+    "dependencies": {
+        "radium": "^0.26.1",
+        "vee-validate": "^3.4.9"
     }
 }
