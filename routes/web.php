@@ -18,3 +18,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('salas_juntas', 'salas_juntasController@index');
+Route::get('salas_juntas/{id}', 'salas_juntasController@show');
+Route::post('salas_juntas', 'salas_juntasController@store');
+Route::put('salas_juntas/{salas_junta}', 'salas_juntasController@update');
+Route::delete('salas_juntas/{salas_junta}', 'salas_juntasController@destroy');

@@ -16,8 +16,8 @@ class CreateSalasJuntasTable extends Migration
         Schema::create('salas_juntas', function (Blueprint $table) {
             $table->bigIncrements('id');
              $table->string('nombre');
-             $table->time('horario_inicial');
-             $table->time('horario_final');
+             $table->time('horario_inicial')->nullable();;
+             $table->time('horario_final')->nullable();;
             $table->timestamps();
         });
     }
