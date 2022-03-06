@@ -24,9 +24,11 @@ class salas_juntasController extends Controller
         $salas_junta = Salas_junta::all();
         foreach($salas_junta as $sala){
         if($sala->horario_final>now()->isoFormat('HH:mm')){
-     event(new liberarSalas($sala->id));
+    event(new liberarSalas($sala->id));
+
         }
          }
+
         }
 
 

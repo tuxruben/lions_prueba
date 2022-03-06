@@ -83,13 +83,13 @@
                 _token: csrfToken,
             }).then(response => {
                     this.lists = response.data
-                    console.log(this.lists);
+
                 });
             },liberar(id) {//metodo que hace la peticion put para liberar la sala
             axios.put('lions_prueba/public/liberacion/'+id, this.data, {
                 _token: csrfToken,
              }).then(y => {
-                    console.log(y.data);
+
                      this.$router.push({
                             name: 'SalasDisponibles'
                         });

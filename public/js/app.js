@@ -2479,7 +2479,6 @@ window.csrfToken = document.querySelector('meta[name="csrf-token"]').content;
         _token: csrfToken
       }).then(function (response) {
         _this2.lists = response.data;
-        console.log(_this2.lists);
       });
     },
     liberar: function liberar(id) {
@@ -2489,8 +2488,6 @@ window.csrfToken = document.querySelector('meta[name="csrf-token"]').content;
       axios__WEBPACK_IMPORTED_MODULE_0___default.a.put('lions_prueba/public/liberacion/' + id, this.data, {
         _token: csrfToken
       }).then(function (y) {
-        console.log(y.data);
-
         _this3.$router.push({
           name: 'SalasDisponibles'
         });
