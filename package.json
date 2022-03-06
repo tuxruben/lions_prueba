@@ -25,6 +25,7 @@
         "vue-template-compiler": "^2.6.14"
     },
     "dependencies": {
+        "moment": "^2.29.1",
         "radium": "^0.26.1",
         "vee-validate": "^3.4.9"
     }

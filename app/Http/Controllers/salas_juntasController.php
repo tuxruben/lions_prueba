@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Salas_junta;
-
+use App\Events\liberarSalas;
 
 class salas_juntasController extends Controller
 {
@@ -18,6 +18,18 @@ class salas_juntasController extends Controller
     {
         return Salas_junta::all();
     }
+    // metodo para  recorrer los registros de la tabla salas y liberar las salas que su tiempo final haya pasado
+    public function liberacionAutomatica()
+    {
+        $salas_junta = Salas_junta::all();
+        foreach($salas_junta as $sala){
+        if($sala->horario_final>now()->isoFormat('HH:mm')){
+     event(new liberarSalas($sala->id));
+        }
+         }
+        }
+
+
     //Metodo para mostrar un registro en particular de la tabla salas
  public function show($id)
     {
@@ -40,7 +52,7 @@ class salas_juntasController extends Controller
     //metodo para crear un registro en la tabla salas
     public function store(Request $request)
     {
-        $salas_junta= Salas_junta::create(['nombre' => $request->nombre]);
+        $salas_junta= Salas_junta::create(['nombre' => $request->nombre,'reservado' =>false]);
 
         return response()->json($salas_junta, 201);
     }
@@ -59,6 +71,23 @@ class salas_juntasController extends Controller
     public function update(Request $request, Salas_junta $salas_junta)
     {
          $salas_junta->update(['nombre' =>request('nombre'),]);
+
+        return response()->json($salas_junta, 200);
+    }
+    //Metodo para registara la hora inicial y la hora final
+    public function Reservacion(Request $request, Salas_junta $salas_junta)
+    { if(request('reservado')==false){
+         $salas_junta->update(['horario_inicial' =>request('horario_inicial'),
+            'horario_final' =>request('horario_final'),'reservado' =>true]);
+
+        return response()->json($salas_junta, 200);
+    }
+    }
+    //Metodo para Liberar la sala
+    public function Liberacion( Request $request, Salas_junta $salas_junta)
+    {
+         $salas_junta->update(['horario_inicial' =>null,
+            'horario_final' =>null,'reservado' =>false]);
 
         return response()->json($salas_junta, 200);
     }

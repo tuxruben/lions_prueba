@@ -17,7 +17,8 @@ class CreateSalasJuntasTable extends Migration
             $table->bigIncrements('id');
              $table->string('nombre');
              $table->time('horario_inicial')->nullable();;
-             $table->time('horario_final')->nullable();;
+             $table->time('horario_final')->nullable();
+             $table->boolean('reservado')->nullable();
             $table->timestamps();
         });
     }

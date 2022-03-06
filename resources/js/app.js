@@ -2,6 +2,7 @@
 require('./bootstrap');
 window.Vue = require('vue');
 Vue.component('nav-bar', require('./components/NavBar.vue').default);
+Vue.component('pie', require('./components/footer.vue').default);
 import router from './routes.js'
 const app = new Vue({
     el: '#app',//toda la vista se va a mostrar en el div que tenga como id la palabra app

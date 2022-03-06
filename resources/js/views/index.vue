@@ -25,7 +25,7 @@
       <th scope="row"> {{item.id}}</th>
       <td>{{item.nombre}}</td>
        <td>  <button type="button" class=" btn btn-danger" name="button" @click="delet(item.id)">Borrar</button></td>
-         <td ><router-link :to="{name:'Update',params:{id:item.id}}" ><b class=" btn-warning">Editar</b></router-link></td>
+         <td class="text-center" ><router-link :to="{name:'Update',params:{id:item.id}}" ><b >Editar</b></router-link></td>
     </tr>
   </tbody>
 </table>
@@ -44,7 +44,7 @@
         },
         data() {
             return {
-                subtitulo: 'Soy el subtitulo del componente',
+                subtitulo: 'CRUD Salas',
                 lists: []
             }
         },

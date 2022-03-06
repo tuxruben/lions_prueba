@@ -16,6 +16,7 @@
        <div  id="app">
     <nav-bar></nav-bar>
           <router-view></router-view>
+    <pie></pie>
 
         </div>
    <script src="{{ asset('js/app.js') }}" defer></script>

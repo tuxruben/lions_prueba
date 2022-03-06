@@ -25,6 +25,24 @@ export default new VueRouter({
         component: require('./views/update.vue').default,// hay que crear un nuevo directorio llamado views dentro de la carpeta resources/js, y alli cortar y pegar el componente MiComponente
 //tambien hay que eliminar el compoenete MiComponente del archivo resources/js/app.js
         props: true
+    },{
+        path: '/ReservacionSalas',
+        name: 'ReservacionSalas',
+        component: require('./views/reservacionSalas.vue').default,// hay que crear un nuevo directorio llamado views dentro de la carpeta resources/js, y alli cortar y pegar el componente MiComponente
+//tambien hay que eliminar el compoenete MiComponente del archivo resources/js/app.js
+        props: true
+    }
+    ,{
+        path: '/SalasDisponibles',
+        name: 'SalasDisponibles',
+        component: require('./views/salasDisponibles.vue').default,// hay que crear un nuevo directorio llamado views dentro de la carpeta resources/js, y alli cortar y pegar el componente MiComponente
+//tambien hay que eliminar el compoenete MiComponente del archivo resources/js/app.js
+    },
+    {
+        path: '/SalasReservadas',
+        name: 'SalasReservadas',
+        component: require('./views/salasReservadas.vue').default,// hay que crear un nuevo directorio llamado views dentro de la carpeta resources/js, y alli cortar y pegar el componente MiComponente
+//tambien hay que eliminar el compoenete MiComponente del archivo resources/js/app.js
     } ],
     mode: 'history'
 })

@@ -8,9 +8,16 @@
 
                   <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
-                      <li class="nav-item active">
-                          <router-link  :to="{ name: 'Index' } " style="color:black;"><a >Lista de las salas</a> </router-link>
+                      <li class="nav-item active" style="margin-right:5%;">
+                          <router-link  :to="{ name: 'Index' } "  style="color:black; font-size:12px;"><b>Lista de las salas</b> </router-link>
                       </li>
+                       <li class="nav-item active" style="margin-right:5%;">
+                          <router-link  :to="{ name: 'SalasDisponibles' } "  style="color:black; font-size:12px;" ><b > Reservacion de salas</b> </router-link>
+                      </li>
+                       <li class="nav-item active" style="margin-right:5%;">
+                          <router-link  :to="{ name: 'SalasReservadas' } "  style="color:black; font-size:12px;"><b > Liberacion de salas</b> </router-link>
+                      </li>
+
 
                     </ul>
 
@@ -32,3 +39,4 @@
         }
 
     }
+</script>
